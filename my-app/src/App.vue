@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    <Keyboard msg="This is a keyboard input"/>
+    <Keyboard msg="This is a keyboard input" @melody="syncMelody"/>
+    <Staff id="staff" :content="melodyLine" />
   </div>
 </template>
 
 <script>
 import Keyboard from './components/Keyboard.vue'
-
+import Staff from './components/Staff.vue'
 export default {
   name: 'app',
   components: {
-    Keyboard
+    Keyboard,
+    Staff
+  },
+  data: function() {
+    return {
+      melodyLine: []
+    }
+  },
+  methods: {
+    syncMelody(variable) {
+      this.melodyLine = variable;
+    }
   }
 }
 
