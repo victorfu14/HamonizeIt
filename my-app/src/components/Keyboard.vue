@@ -1,31 +1,33 @@
 <template>
   <div class="input">
-  <ul id="keyboard">
-    <li data-note="C" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">C{{ octave }}</li>
-    <li data-note="C#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease">R</li>
-    <li data-note="D" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">F</li>
-    <li data-note="D#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease">T</li>
-    <li data-note="E" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">G</li>
-    <li data-note="F" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">H</li>
-    <li data-note="F#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease">U</li>
-    <li data-note="G" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">J</li>
-    <li data-note="G#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease">I</li>
-    <li data-note="A" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">K</li>
-    <li data-note="A#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease">O</li>
-    <li data-note="B" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease">L</li>
-    <li data-note="C" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">D</li>
-    <li data-note="C#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease">R</li>
-    <li data-note="D" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">F</li>
-    <li data-note="D#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease">T</li>
-    <li data-note="E" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">G</li>
-    <li data-note="F" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">H</li>
-    <li data-note="F#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease">U</li>
-    <li data-note="G" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">J</li>
-    <li data-note="G#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease">I</li>
-    <li data-note="A" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">K</li>
-    <li data-note="A#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease">O</li>
-    <li data-note="B" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease">L</li>
-  </ul>
+  <div class="table">
+    <ul id="keyboard">
+      <li data-note="C" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="C#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="D" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="D#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="E" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="F" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="F#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="G" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="G#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="A" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="A#" class="black-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="B" class="white-key" id="0" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="C" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="C#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="D" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="D#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="E" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="F" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="F#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="G" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="G#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="A" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="A#" class="black-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+      <li data-note="B" class="white-key" id="1" @mousedown="keypress" @mouseup="keyrelease"></li>
+    </ul>
+  </div>
   <br>
   Octave: <span id="octave">{{ octave }}-{{ octave+1 }}</span> 
   <input id="octave_down" type="button" value="-" @mousedown="octave_change">
@@ -75,17 +77,23 @@ export default {
       if (event.currentTarget.value == "+") {
         if (this.octave < 7) {
           this.octave++;
-          window.console.log(this.octave);
         } else {
           alert("Out of range!\nYou can only lower the pitches.");
         }
       } else {
         if (this.octave > 0) {
           this.octave--;
-          window.console.log(this.octave);
         } else {
           alert("Out of range!\nYou can only higher the pitches.");
         }
+      }
+      const whitekeys = document.getElementsByClassName("white-key");
+      const blackkeys = document.getElementsByClassName("black-key");
+      for (const key of whitekeys) {
+        key.innerHTML = key.dataset.note.concat(parseInt(key.id) + this.octave);
+      }
+      for (const key of blackkeys) {
+        key.innerHTML = key.dataset.note.concat(parseInt(key.id) + this.octave);
       }
     },
     clear: function() {
@@ -113,11 +121,15 @@ export default {
 body {
   overflow-x: scroll;
 }
+.table {
+  display: table;   /* Allow the centering to work */
+	margin: auto;
+}
 ul {
   list-style: none;
   display: inline-block;
   padding: 0;
-  width: 700px;
+  width: 100%;
   position: relative;
 }
 ul li {
@@ -125,26 +137,40 @@ ul li {
   float: left;
   border-style: solid;
   border-color: #000;
-  border-width: 2px 1px 2px 1px;
+  border-width: 2px 1px 1px 1px;
   border-radius: 0 0 4px 4px;
   color: #ccc;
   text-align: center;
   cursor: pointer;
 }
 ul .white-key {
-  width: 30px;
-  height: 150px;
+  width: 45px;
+  height: 175px;
   background:#fff;
+  line-height: 300px;
 }
 ul .black-key {
   background:#000;
   z-index: 10;
-  width: 20px;
-  height: 90px;
-  margin: 0 0 0 -10px;
+  width: 30px;
+  height: 120px;
+  margin: 0 0 0 -16px;
+  line-height: 180px;
 }
 /* positioning */
 .black-key + .white-key {
-  margin-left: -12px;
+  margin-left: -16.5px;
+}
+.black-key:hover:active {
+  background: #555;
+}
+.black-key:hover {
+  background: #444;
+}
+.white-key:hover:active {
+  background: #ddd;
+}
+.white-key:hover {
+  background: #eee;
 }
 </style>
