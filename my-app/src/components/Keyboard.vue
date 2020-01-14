@@ -34,9 +34,9 @@
   <input id="octave_up" type="button" value="+" @mousedown="octave_change">
   <br>
   <input id="clear_melody" type="button" value="Clear Melody" @mousedown="clear">
+  <input id="delete" type="button" value="Delete note" @mousedown="deleteNote">
   <input id="submit_melody" type="button" value="Confirm">
   <br>
-  <span id="melody_disp"></span>
   </div>
 </template>
 
@@ -87,6 +87,9 @@ export default {
           alert("Out of range!\nYou can only higher the pitches.");
         }
       }
+      this.updateDisp()
+    },
+    updateDisp: function() {
       const whitekeys = document.getElementsByClassName("white-key");
       const blackkeys = document.getElementsByClassName("black-key");
       for (const key of whitekeys) {
@@ -99,18 +102,15 @@ export default {
     clear: function() {
       this.melody = [];
       this.$emit("melody", this.melody);
+    },
+    deleteNote: function() {
+      this.melody.pop();
+      this.$emit("melody", this.melody);
     }
   },
   mounted() {
+    this.updateDisp()
     this.synth.toMaster();
-    const whitekeys = document.getElementsByClassName("white-key");
-    const blackkeys = document.getElementsByClassName("black-key");
-    for (const key of whitekeys) {
-      key.innerHTML = key.dataset.note.concat(parseInt(key.id) + this.octave);
-    }
-    for (const key of blackkeys) {
-      key.innerHTML = key.dataset.note.concat(parseInt(key.id) + this.octave);
-    }
   }
 }
 
@@ -161,6 +161,10 @@ ul .black-key {
 .black-key + .white-key {
   margin-left: -16.5px;
 }
+.white-key + .white-key {
+  margin-left: -0.5px;
+}
+
 .black-key:hover:active {
   background: #555;
 }
